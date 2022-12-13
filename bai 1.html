@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1</title>
+</head>
+<body>
+    <h1>Tổng các số nguyên tố</h1>
+    <label for="a">Nhập số a</label>
+    <input type="text" id="a">
+    <br>
+    <label for="b">Nhập số b</label>
+    <input type="text" id="b">
+    <br>
+    <button id="btn">Tính tổng</button>
+
+    <script>
+        function checkingnumber(num) {
+            if (num < 2) return false;
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        const button = document.getElementById('btn');
+        button.onclick = function() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            let total = 0;
+            for (a; a <= b; a++) {
+                if (checkingnumber(a)) {
+                    total += a;
+                }
+            } 
+            alert('Tổng các số nguyên tố là: ' + total);
+        }
+    </script>
+
+</body>
+</html>
